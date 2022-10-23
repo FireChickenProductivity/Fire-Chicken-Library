@@ -1,0 +1,18 @@
+3 tests failed
+
+The following test failed: failed_version_of_two_plus_two_equals_four.
+Result:
+Expected:
+4
+Actual:
+3
+
+The following test failed: this_should_fail_properly.
+Result:
+Expected:
+failed without crashing
+Actual:
+no actual value
+
+The following test crashed: this_will_crash.
+It gave the following crash error: crash
