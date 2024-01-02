@@ -4,7 +4,7 @@ class SleepSetting:
     def __init__(self, name: str, default_amount: float, description: str, provided_module: Module):
         module = provided_module
         
-        self.setting_name = 'user' + name
+        self.setting_name = 'user.' + name
         module.setting(
             name,
             type = float,
