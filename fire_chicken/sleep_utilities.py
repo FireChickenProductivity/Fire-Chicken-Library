@@ -1,12 +1,11 @@
-from talon import actions, Module
+from talon import actions, Module, settings
 
 class SleepSetting:
-    def __init__(self, name: str, default_amount: float, description: str, provided_module = None):
+    def __init__(self, name: str, default_amount: float, description: str, provided_module: Module):
         module = provided_module
-        if module is None:
-            module = Module()
         
-        self.setting = module.setting(
+        self.setting_name = 'user.' + name
+        module.setting(
             name,
             type = float,
             default = default_amount,
@@ -20,7 +19,7 @@ class SleepSetting:
         actions.sleep(self.get() * factor)
     
     def get(self):
-        return self.setting.get()
+        return settings.get(self.setting_name)
 
 def sleep_max_setting(* args):
     maximum_delay_amount = 0
